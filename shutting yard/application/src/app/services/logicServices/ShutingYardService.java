@@ -17,18 +17,23 @@ public class ShutingYardService {
 
     public ArrayList<Prop> aSufijo(String exp) {
         elements = new ArrayList<Prop>();
+        int parentesis = 0;
         char[] chx = exp.toCharArray();
         int col = 0;
         for (char c : chx) {
             if (Character.isLetterOrDigit(c)) // verifica si es letra o número
                 elements.add(new Prop(c, col));
             else {
-                if (c == '(' || c == ')')
+                if (c == '(' || c == ')'){
                     col--;
+                    if(c == '(') parentesis ++;
+                    else if(parentesis >0) parentesis --;
+                }
                 controller(c, col);
             }
             col++;
         }
+        if(parentesis !=  0) return null;
         while (!stack.empty()) {
             Prop c = stack.pop();
             if (!c.getC().equals('('))

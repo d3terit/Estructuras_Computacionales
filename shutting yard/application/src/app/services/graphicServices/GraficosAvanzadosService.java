@@ -71,7 +71,7 @@ public class GraficosAvanzadosService {
         ){
             return new BasicScrollBarUI() {
                 private Dimension d = new Dimension();
-            
+                
                 @Override
                 protected JButton createDecreaseButton(int orientation) {
                     JButton boton = new JButton();

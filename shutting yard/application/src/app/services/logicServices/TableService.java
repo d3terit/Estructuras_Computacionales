@@ -18,7 +18,11 @@ public class TableService {
 
     public Table entrada(ArrayList<Prop> elements, String input) {
         Table table = new Table(elements.size());
-        table.setInput(input);
+        String output = "";
+        for (Prop prop : elements) {
+            output += prop.getC();
+        }
+        table.setInput(input, output);
         for (Prop element : elements) {
             table.addExp(element.getCol(), element.getC());
             if (Character.isLetterOrDigit(element.getC()) && !table.getP().contains(element.getC()))

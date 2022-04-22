@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Table {
-    private String input;
+    private String input, output;
     private int[][] values, result;
     private ArrayList<Character> p, exp;
     private int rta;
@@ -33,8 +33,13 @@ public class Table {
         return input;
     }
 
-    public void setInput(String input) {
+    public String getOutput(){
+        return output;
+    }
+
+    public void setInput(String input, String output) {
         this.input = input;
+        this.output = output;
     }
 
     public int[][] getValues() {

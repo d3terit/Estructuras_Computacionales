@@ -77,7 +77,7 @@ public class TableTemp extends JPanel {
 
     public void createJTextField() {
         input = sObjGraficos.construirJTextField(
-                modelTable.getInput(), (int) (top.getWidth() * 0.1),
+                modelTable.getOutput(), (int) (top.getWidth() * 0.1),
                 25, (int) (top.getWidth() * 0.8), 25,
                 sRecursos.getFontserifJl(), null, sRecursos.getColorcWhite(),
                 null, null, "c");
@@ -172,7 +172,7 @@ public class TableTemp extends JPanel {
         tableP.setDefaultRenderer(Object.class, sGraficosAvanzados.devolverTablaPersonalizada(
                 sRecursos.getColorBlueDark(),sRecursos.getColorBlueDark(),sRecursos.getColorBlueDark(),
                 sRecursos.getColorcWhite(), sRecursos.getFontserifJl(),-1));
-
+        tableP.getTableHeader().setBackground(sRecursos.getColorBlueDark());
         headerExp.setDefaultRenderer(
                 sGraficosAvanzados.devolverTablaPersonalizada(
                         sRecursos.getColorPrimary(),
@@ -182,7 +182,7 @@ public class TableTemp extends JPanel {
         tableExp.setDefaultRenderer(Object.class, sGraficosAvanzados.devolverTablaPersonalizada(
                 sRecursos.getColorBlueDark(),sRecursos.getColorBlueDark(),sRecursos.getColorBlueDark(),
                 sRecursos.getColorcWhite(), sRecursos.getFontserifJl(), -1));
-
+        tableExp.getTableHeader().setBackground(sRecursos.getColorBlueDark());
         conTable.add(sTableP);
         conTable.add(sTableExp);
     }
